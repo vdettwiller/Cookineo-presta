@@ -1,4 +1,18 @@
-/*
- * Custom code goes here.
- * A template should always ship with an empty custom.css
- */
+
+
+#products article.product-miniature div.thumbnail-container, article.product-miniature div.thumbnail-container{
+	width: 100%;
+}
+
+#products .product-description, .featured-products .product-description, .product-accessories .product-description, .product-miniature .product-description{
+	position: inherit;
+	background-color: transparent;
+}
+
+#products article.product-miniature div.thumbnail-container, article.product-miniature div.thumbnail-container{
+	height: 145px;
+}
+
+.tailleImg{
+	width: 45%;
+}
