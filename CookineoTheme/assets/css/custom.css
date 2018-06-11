@@ -21,6 +21,10 @@
 	background-color: #ed2a81;
 }
 
+.btn-primary:hover{
+	background-color:#EF3C89;
+}
+
 #header .header-nav .cart-preview.active{
 	background-color: #ed2a81;
 }
