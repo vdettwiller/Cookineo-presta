@@ -25,86 +25,45 @@
 {block name='product_miniature_item'}
   <article class="product-miniature js-product-miniature w-100" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
     <div class="thumbnail-container">
-     <div class="left-block col-sm-12 col-md-4"> <!-- Début Colonne de gauche (img)-->
-      {block name='product_thumbnail'}
-        <a href="{$product.url}" class="thumbnail product-thumbnail">
-          <img class="img-responsive tailleImg mt-1"
-            src = "{$product.cover.bySize.home_default.url}"
-            alt = "{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
-            data-full-size-image-url = "{$product.cover.large.url}"
-          >
-        </a>
-		  
-      {/block}
-		 
-      </div><!-- Fin Colonne de gauche (img)-->
-
-     <div class="center-block col-sm-12 col-md-4"><!-- Début Colonne du milieu (description)-->
-      <div class="product-description">
-        {block name='product_name'}
-          <h1 class="h3 product-title" itemprop="name"><a href="{$product.url}">{$product.name|truncate:30:'...'}</a></h1>
-        {/block}
-
-        {block name='product_price_and_shipping'}
-          {if $product.show_price}
-            <div class="product-price-and-shipping">
-              {if $product.has_discount}
-                {hook h='displayProductPriceBlock' product=$product type="old_price"}
-
-                <span class="sr-only">{l s='Regular price' d='Shop.Theme.Catalog'}</span>
-                <span class="regular-price">{$product.regular_price}</span>
-               
-
-              {hook h='displayProductPriceBlock' product=$product type="before_price"}
-
-             
-              <span class="sr-only">{l s='Price' d='Shop.Theme.Catalog'}</span>
-              <span itemprop="price" class="price">{$product.price}</span>
-              {if $product.discount_type === 'percentage'}
-                <!-- <span class="discount-percentage discount-product">{$product.discount_percentage}</span>-->
-                {elseif $product.discount_type === 'amount'}
-                 <span class="discount-amount discount-product">{$product.discount_amount_to_display}</span>
-                {/if}
-              {/if}
-
-              {hook h='displayProductPriceBlock' product=$product type='unit_price'}
-
-              {hook h='displayProductPriceBlock' product=$product type='weight'}
-            </div>
-          {/if}
-        {/block}
-
-        {block name='product_reviews'}
-          {hook h='displayProductListReviews' product=$product}
-        {/block}
-      </div>
-      </div><!-- Fin Colonne du milieu (description)-->
-      
-    <div class="right-block col-sm-12 col-md-4"><!-- Début Colonne droit (Btn)-->
-       <form action="{$urls.pages.cart}" method="post">
-   		<input type="hidden" name="token" value="{$static_token}">
-   		<input type="hidden" value="{$product.id_product}" name="id_product">
-  		 <input type="number" class="input-group form-control" name="qty" min="0" value="0">
-  		 
-  		 
-  		<button data-button-action="add-to-cart" class="btn btn-primary">{l s='Add to cart' d='Shop.Theme.Actions'}</button>
-		   
-	
-  		
-  		
-		</form>
-	</div><!-- Fin Colonne droit (Btn)-->
-
-     <!-- {block name='product_flags'}
-        <ul class="product-flags">
-          {foreach from=$product.flags item=flag}
-            <li class="product-flag {$flag.type}">{$flag.label}</li>
-          {/foreach}
-        </ul>
-      {/block}-->
-
-      
-
-    </div>
-  </article>
-{/block}
+    <!-------------------------------------- Début Colonne de gauche (img)-------------------------------------->
+				{block name='product_thumbnail'}
+				<a href="{$product.url}" class="thumbnail product-thumbnail"><img class="img-responsive tailleImg mt-1"src = "{$product.cover.bySize.home_default.url}"alt = "{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"data-full-size-image-url = "{$product.cover.large.url}"></a>
+				{/block}
+			</div>
+			<!-------------------------------------- Fin Colonne de gauche (img)-------------------------------------->
+			<div class="center-block col-sm-12 col-md-4">
+				<!-------------------------------------- Début Colonne du milieu (description)-------------------------------------->
+				<div class="product-description">
+					{block name='product_name'}
+					<h1 class="h3 product-title" itemprop="name"><a href="{$product.url}">{$product.name|truncate:30:'...'}</a></h1>
+					{/block}{block name='product_price_and_shipping'}{if $product.show_price}
+					<!-------------------------------------- Prix des articles -------------------------------------->
+					<div class="product-price-and-shipping">
+						{if $product.has_discount}{hook h='displayProductPriceBlock' product=$product type="old_price"}
+						<span class="sr-only">{l s='Regular price' d='Shop.Theme.Catalog'}</span>
+						<span class="regular-price">{$product.regular_price}</span>
+						{if $product.discount_type === 'percentage'}{elseif $product.discount_type === 'amount'}
+						<span class="discount-amount discount-product">{$product.discount_amount_to_display}</span>
+						{/if}{/if}{hook h='displayProductPriceBlock' product=$product type="before_price"}
+						<span class="sr-only">{l s='Price' d='Shop.Theme.Catalog'}</span>
+						<span itemprop="price" class="price">{$product.price}</span>
+						{hook h='displayProductPriceBlock' product=$product type='unit_price'}{hook h='displayProductPriceBlock' product=$product type='weight'}
+					</div>
+					<!-------------------------------------- FIN Prix des articles -------------------------------------->
+					{/if}{/block}  {block name='product_variants'}{if $product.main_variants}{include file='catalog/_partials/variant-links.tpl' variants=$product.main_variants}{/if}{/block}{block name='product_reviews'}{hook h='displayProductListReviews' product=$product}{/block}
+				</div>
+			</div>
+			<!-------------------------------------- Fin Colonne du milieu (description)-------------------------------------->
+			<div class="right-block col-sm-12 col-md-4">
+				<!-------------------------------------- Début Colonne droit (Btn)-------------------------------------->
+				<form action="{$urls.pages.cart}" method="post">
+					<input type="hidden" name="token" value="{$static_token}">
+					<input type="hidden" value="{$product.id_product}" name="id_product" id="id_product">
+					<input type="number" class="input-group form-control inputqty" name="qty" min="0" value="0">
+					<button id="testdtw" data-button-action="add-to-cart" class="btn btn-primary ma_classe">{l s='Add to cart' d='Shop.Theme.Actions'}</button>
+					<input id="checkBox" type="checkbox" name="checkbox" value="{$product.id_product}">
+				</form>
+			</div>
+			<!-------------------------------------- Fin Colonne droit (Btn)-------------------------------------->
+		</div>
+	</article>
