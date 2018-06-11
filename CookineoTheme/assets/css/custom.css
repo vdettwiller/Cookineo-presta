@@ -1,93 +1,128 @@
 /* Modification de la vue des articles*/
-
-
-#products article.product-miniature div.thumbnail-container, article.product-miniature div.thumbnail-container{
+#products article.product-miniature div.thumbnail-container, article.product-miniature div.thumbnail-container
+{
 	width: 100%;
 }
 
-#products .product-description, .featured-products .product-description, .product-accessories .product-description, .product-miniature .product-description{
+#products .product-description, .featured-products .product-description, .product-accessories .product-description, .product-miniature .product-description
+{
 	position: inherit;
 	background-color: transparent;
 }
 
-#products article.product-miniature div.thumbnail-container, article.product-miniature div.thumbnail-container{
+#products article.product-miniature div.thumbnail-container, article.product-miniature div.thumbnail-container
+{
 	height: 145px;
 }
 
-.tailleImg{  /* Taille de l'image article*/
+.tailleImg
+{
+	/* Taille de l'image article*/
 	width: 45%;
 }
 
 /*FIN  Modification de la vue des articles*/
-
-.btn-primary { /* Changement de couleur du btn primary*/
+.btn-primary
+{
+	/* Changement de couleur du btn primary*/
 	background-color: #ed2a81;
 }
 
-.btn-primary:hover{
+.btn-primary:hover
+{
 	background-color:#EF3C89;
 }
 
-#header .header-nav .cart-preview.active{ /* Changement de couleur du cartouche top*/
+#header .header-nav .cart-preview.active
+{
+	/* Changement de couleur du cartouche top*/
 	background-color: #ed2a81;
 }
 
-.header-nav{
+.header-nav
+{
 	in-height: 40px;
-    font-size: 14px;
-    background: #3c3c3c;
+	font-size: 14px;
+	background: #3c3c3c;
 }
 
-#header a { /* Changement de couleur des liens type "a"*/
-    color: #EF3C89;
+#header a
+{
+	/* Changement de couleur des liens type "a"*/
+	color: #EF3C89;
 }
 
-#header a:hover {
-    text-decoration: none;
-    color: #EF3C89;
+#header a:hover
+{
+	text-decoration: none;
+	color: #EF3C89;
 }
 
-#header_logo {
-    margin: 10px 0;
-    margin-top: 20px;
+#header_logo
+{
+	margin: 10px 0;
+	margin-top: 20px;
 }
 
-#vdtwmenu {   /* Menu perso */
-    border-bottom: 1px solid #ededed;
-    margin-bottom: 40px;
+#vdtwmenu
+{
+	/* Menu perso */
+	border-bottom: 1px solid #ededed;
+	margin-bottom: 40px;
 	font-family: "Roboto Slab", sans-serif;
-    border-top: 1px solid #ededed;
-    background: transparent;
-    color: black;
+	border-top: 1px solid #ededed;
+	background: transparent;
+	color: black;
 }
 
-.vdtwmenu{
-    position: relative;
+.vdtwmenu
+{
+	/* Position du menu*/
+	position: relative;
 }
 
-.footer-container{   /* Changement de couleur du footer*/
-	 background-color: #3c3c3c;
+.footer-container
+{
+	/* Changement de couleur du footer*/
+	background-color: #3c3c3c;
 }
 
-.h3{
-	color: #EF3C89;
-}
-#block_myaccount_infos .myaccount-title a{
-	color: #EF3C89;
-}
-
-.block-contact .block-contact-title, .linklist .blockcms-title a{
-	color: #EF3C89;
-}
-
-a{
+.h3
+{
 	color: #EF3C89;
 }
 
-a:hover {
-    color: #EC5696;
-    text-decoration: none;
+#block_myaccount_infos .myaccount-title a
+{
+	color: #EF3C89;
 }
-#header .top-menu a[data-depth="0"]:hover{
+
+.block-contact .block-contact-title, .linklist .blockcms-title a
+{
+	color: #EF3C89;
+}
+
+a
+{
+	color: #EF3C89;
+}
+
+a:hover
+{
 	color: #EC5696;
+	text-decoration: none;
+}
+
+#header .top-menu a[data-depth="0"]:hover
+{
+	color: #EC5696;
+}
+
+.inputqty
+{
+	/* param input quantite */
+	width: 45%;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
