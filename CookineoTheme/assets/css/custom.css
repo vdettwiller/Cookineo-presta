@@ -28,3 +28,63 @@
 #header .header-nav .cart-preview.active{
 	background-color: #ed2a81;
 }
+
+.header-nav{
+	in-height: 40px;
+    font-size: 14px;
+    background: #3c3c3c;
+}
+
+#header a {
+    color: #EF3C89;
+}
+
+#header a:hover {
+    text-decoration: none;
+    color: #EF3C89;
+}
+
+#header_logo {
+    margin: 10px 0;
+    margin-top: 20px;
+}
+
+#vdtwmenu {
+    border-bottom: 1px solid #ededed;
+    margin-bottom: 40px;
+	font-family: "Roboto Slab", sans-serif;
+    border-top: 1px solid #ededed;
+    background: transparent;
+    color: black;
+}
+
+.vdtwmenu{
+    position: relative;
+}
+
+.footer-container{
+	 background-color: #3c3c3c;
+}
+
+.h3{
+	color: #EF3C89;
+}
+#block_myaccount_infos .myaccount-title a{
+	color: #EF3C89;
+}
+
+.block-contact .block-contact-title, .linklist .blockcms-title a{
+	color: #EF3C89;
+}
+
+a{
+	color: #EF3C89;
+}
+
+a:hover {
+    color: #EC5696;
+    text-decoration: none;
+}
+#header .top-menu a[data-depth="0"]:hover{
+	color: #EC5696;
+}
