@@ -1,0 +1,9 @@
+parent : classic
+name: themeDisii
+display_name: "themeDisii"
+version: 1.0.0
+assets:use_parent_assets: true
+author:
+  name: "Vanessa Detwillrt"
+  email: "vanessadettwiller@gmail.com"
+  url: "http://www.prestashop.com"
