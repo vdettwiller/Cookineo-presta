@@ -32,7 +32,7 @@
       </ul>
     {/if}
 {/function}
-<nav id="cavas_menu" class="sf-contener vdtwmenu">  <!--Ajout de la class vdtwmenu-->
+<nav id="cavas_menu" class="sf-contener vdtwmenu"> <!--Ajout de la class vdtwmenu-->
 <div class="menu col-lg-8 col-md-7 js-top-menu position-static hidden-sm-down" id="_desktop_top_menu">
     {menu nodes=$menu.children}
     <div class="clearfix"></div>
