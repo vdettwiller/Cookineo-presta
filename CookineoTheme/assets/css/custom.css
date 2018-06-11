@@ -16,3 +16,11 @@
 .tailleImg{
 	width: 45%;
 }
+
+.btn-primary {
+	background-color: #ed2a81;
+}
+
+#header .header-nav .cart-preview.active{
+	background-color: #ed2a81;
+}
