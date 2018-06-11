@@ -58,15 +58,17 @@
   <div class="header-top">
     <div class="container">
        <div class="row">
-        <div class="col-md-2 hidden-sm-down" id="_desktop_logo">
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 col-sp-12" id="_desktop_logo"> <!-- Ajout des class bootstrap-->
+			<div id="header-logo">
           <a href="{$urls.base_url}">
             <img class="logo img-responsive" src="{$shop.logo}" alt="{$shop.name}">
           </a>
+			</div>
         </div>
-        <div class="col-md-10 col-sm-12 position-static">
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 col-sp-12">
           <div class="row">
             {hook h='displayTop'}
-            <div class="clearfix"></div>
+            <div class="clearfix mt-3" id="vdtwmenu"></div> <!-- Ajout d'un margin top (mt-3) + id-->
           </div>
         </div>
       </div>
